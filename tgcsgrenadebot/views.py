@@ -9,8 +9,8 @@ import time
 from .handlers import handlers_register
 
 
-TG_TOKEN = "5726936227:AAFd5WF40aAi_bX_MeukzfSfXxZOqUYB4ng"
-WEB_HOOK_URL = "https://1a9c-92-62-59-148.ngrok-free.app"
+TG_TOKEN = ""
+WEB_HOOK_URL = ""
 
 state_storage = StateMemoryStorage()
 
