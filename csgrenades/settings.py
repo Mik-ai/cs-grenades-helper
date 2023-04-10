@@ -25,15 +25,21 @@ SECRET_KEY = ""
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-WEB_HOOK_URL = "ac3a-92-62-59-151.eu.ngrok.io"
+WEB_HOOK_URL = "1a9c-92-62-59-148.ngrok-free.app"
 
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", WEB_HOOK_URL]
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     "tgcsgrenadebot.apps.TgbotConfig",
+    "rest_framework",
+    "debug_toolbar",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -43,6 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

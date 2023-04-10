@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from telebot import TeleBot
 from telebot.storage import StateMemoryStorage
 
@@ -10,8 +9,8 @@ import time
 from .handlers import handlers_register
 
 
-TG_TOKEN = ""
-WEB_HOOK_URL = ""
+TG_TOKEN = "5726936227:AAFd5WF40aAi_bX_MeukzfSfXxZOqUYB4ng"
+WEB_HOOK_URL = "https://1a9c-92-62-59-148.ngrok-free.app"
 
 state_storage = StateMemoryStorage()
 
@@ -32,10 +31,11 @@ class UpdateBot(APIView):
         return Response({"code": 200})
 
 
-
 handlers_register.register(bot)
+
 
 def test_handler(message: types.Message, bot: TeleBot):
     bot.send_message(message.chat.id, text="test")
+
 
 bot.register_message_handler(test_handler, commands=["test"], pass_bot=True)
